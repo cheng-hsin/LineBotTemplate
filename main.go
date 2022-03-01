@@ -57,6 +57,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("阿囉哈!!"+message.ID+":"+message.Text+" OK! remain message:"+strconv.FormatInt(quota.Value, 10))).Do(); err != nil {
 					log.Print(err)
 				}
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("第二則訊息!!"+message.ID+":"+message.Text+" OK! remain message:"+strconv.FormatInt(quota.Value, 10))).Do(); err != nil {
+					log.Print(err)
+				}
 			}
 		}
 	}
